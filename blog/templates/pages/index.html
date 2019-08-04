@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tete">
+        <img class="logo" src="{{ url_for('static',filename='images/sonatel.gif') }}" alt="logo"> 
+        <h2>Bienvenue à la Sonatel Academy</h2>
+    </div>  
+    <form action="/add" method="POST">
+        <fieldset class="milieu">
+            
+            <label class="bton" for="chatnoir"><input id="chatnoir" type="radio" name="choix" value="nouveau"> Nouveau</label>
+            <label class="bton" for="chatnoir"><input id="chatnoir" type="radio" name="choix" value="ancien"> Ancien</label>
+
+            <fieldset>
+                <legend>Etudiant</legend>
+                    <label class="lab" for="matricule">Matricule</label>
+                    <input id="matricule" type="text" name="matricule"  value="{{sa}}" ><br><br>
+                    <label class="lab" for="nom">Nom</label>
+                    <input id="nom" type="text" name="nom"><br><br>
+                    <label class="lab" for="prenom">Prénom</label>
+                    <input id="prenom" type="text" name="prenom"><br><br>
+                    <label class="lab" for="naissance">Date Naissance</label>
+                    <input id="naissance" type="date" name="naissance"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Inscription</legend>
+                    
+                    <label class="lab" for="filiere">Filiére</label>
+                    <select name="filiere" id="filiere">
+                        {% for filiere in filiere %} 
+                        <option class="op" value="{{filiere.id_filiere}}">{{ filiere.libelle_filiere }}</option>
+                        {%endfor%}
+                    </select> <br> <br>
+
+                    <label class="lab" for="classe">Classe</label>
+                    <select name="classe" id="classe">
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select> <br> <br>
+
+                    <label class="lab" for="montant">Montant</label>
+                    <input id="montant" type="text" name="montant"><br><br>
+                    <label class="lab" for="mensualite">Mensualité</label>
+                    <input id="mensualite" type="text" name="mensualite"><br><br>
+                    <label class="lab" for="total">Total inscription</label>
+                    <input id="total" type="text" name="total"><br><br>
+                    <label class="lab" for="date">Date inscription</label>
+                    <input id="date" type="date" name="date"><br><br>
+                    <label class="lab" for="annee">Année Academy</label>
+                    <input id="matricule" type="text" name="annee" placeholder="2018-2019"><br><br>
+                 
+            </fieldset>
+            <p><input type="submit" value="Enregistrer"></p>
+        </fieldset>
+    </form>
+    </br>
+    <div id="output"></div>
+    </br>
+   
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $("input[type=radio]").click(() => {
+          const val = $('input[name=choix]:checked').val();
+          if (val === "nouveau") {
+              //$("#matricule").val("valeur changée")
+              //$("#matriculr").addClass('disabled')
+              //$("#matricule").prop(disabled, false);
+              document.getElementById("matricule").disabled = true;
+          }else{
+              //$("#matricule").removeClass('disabled')
+              document.getElementById("matricule").disabled = false;
+          }
+
+          if(val === "ancien"){
+              alert("Êtes-vous un ancien étudiant?")
+          }else{
+              //alert("error 404")
+          }
+    });
+</script>
+    <script src="{{ url_for('static',filename='js/jquery-3.4.1.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static',filename='js/script.js') }}"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+</html>

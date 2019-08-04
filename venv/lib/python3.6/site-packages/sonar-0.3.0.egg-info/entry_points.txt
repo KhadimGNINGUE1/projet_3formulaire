@@ -1,0 +1,3 @@
+[console_scripts]
+sonar = sonar.cli:main
+

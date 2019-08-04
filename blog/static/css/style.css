@@ -1,0 +1,95 @@
+body {
+    background-color: white;
+}
+.tete {
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: rgb(12, 160, 91);
+    margin-top: 20px;
+    font-size: 20px;
+    height: 50px;
+    border-style: outset;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-color: rgb(12, 160, 91);
+}
+h2 {
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+  }
+.milieu {
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: rgb(12, 160, 91);
+    color: black; 
+    box-shadow: inset;
+      
+}
+   
+fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+    box-shadow: 1px 2px 2px  white;
+    border-style: outset;
+}
+   
+legend {
+    padding: 0px 3px;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: white;
+    font-size: 20px;
+}
+input[type=radio] {
+    width: 20px;
+    margin-left: 200px;
+    
+}
+.bton{
+    color: white;
+    font-size: 25px;
+}
+
+.lab {
+    width: 110px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 6px;
+    margin-top: 2px;
+    color: white;
+    margin-left: 200px;
+    
+}
+.form input,select {
+    margin-bottom: 10px;
+    width: 23%;
+    color: black;
+}
+input[type=submit] {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: darkgrey;
+    background-color: green;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 350px;
+    color: white;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-left: 30px;
+}
+.disabled{
+    outline: none; 
+    border: none; 
+    padding: 6px 2px; 
+    background-color: none;
+}
